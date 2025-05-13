@@ -82,12 +82,7 @@ public:
 			}
 		}
 	}
-	/*void draw(RectangleShape**& grid,RenderWindow& win) {
-		for (int i = 0; i < 4; i++) {
-			blocks[i].setPosition(grid[coords[i].GetX()][coords[i].GetY()].getPosition());
-			win.draw(blocks[i]);
-		}
-	}*/
+
 	void Create(char**& grid, bool &gameended) {
 		for (int i = 0; i < 4; i++) {
 			if (grid[coords[i].GetX()][coords[i].GetY()] != '*' && grid[coords[i].GetX()][coords[i].GetY()] != id) {
@@ -111,6 +106,10 @@ public:
 	void SetCoord(int i, int j, int k) { coords[i].SetCoordinate(j, k); }
 
 	void virtual assign(Tetrino* obj) = 0;
+
+	virtual ~Tetrino() {
+		delete coords;
+	}
 };
 
 class TBlock :public Tetrino {
