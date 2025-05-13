@@ -499,9 +499,5 @@ public:
 
 
     }
-    ~Game() {
-        delete CurrentBlock;
-        delete Queue;
-    }
 
 };
