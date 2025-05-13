@@ -107,9 +107,7 @@ public:
 
 	void virtual assign(Tetrino* obj) = 0;
 
-	virtual ~Tetrino() {
-		delete coords;
-	}
+
 };
 
 class TBlock :public Tetrino {
